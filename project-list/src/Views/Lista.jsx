@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ListContainer from '../Components/ListContainer'
 import Typography from '@mui/material/Typography'
+import Botones from '../Components/Botones'
 
 export default function MainList(){
     return(
@@ -11,6 +12,7 @@ export default function MainList(){
         align= 'center'
         sx={{padding: 4}}>To do</Typography>
         <ListContainer/>
+        <Botones/>
         </>
         
     )
