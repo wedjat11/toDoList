@@ -6,36 +6,31 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import IconButton from '@mui/material/IconButton'
+import IconButton from '@mui/material/IconButton';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
 
-
-
-function createData(taskName, actions, ) {
-  return { taskName, actions};
+function createData(taskName, actions) {
+  return { taskName, actions };
 }
 
-const iconsTest = [
-  <>
-  <IconButton>
-      <DeleteForeverIcon/>
-  </IconButton>
-  <IconButton>
-    <EditIcon/>
-  </IconButton>
-  </>
-  
-]
-
 const rows = [
-  createData('Jugar Futbol', iconsTest
-  ),
+  createData('Jugar Futbol', [
+    <IconButton key="delete">
+      <DeleteForeverIcon />
+    </IconButton>,
+    <IconButton key="edit">
+      <EditIcon />
+    </IconButton>,
+  ]),
 ];
 
 export default function ListContainer() {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer 
+      component={Paper} 
+      sx={{ width: "80vw", margin: "0 auto", display: "flex", justifyContent: "center" }}
+    >
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -52,7 +47,11 @@ export default function ListContainer() {
               <TableCell component="th" scope="row">
                 {row.taskName}
               </TableCell>
-              <TableCell align="right">{row.actions}</TableCell>
+              <TableCell align="right">
+                {row.actions.map((action, index) => (
+                  <React.Fragment key={index}>{action}</React.Fragment>
+                ))}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

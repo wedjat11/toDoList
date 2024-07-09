@@ -2,7 +2,8 @@ import React from "react";
 import Button from '@mui/material/Button'
 import { Box } from "@mui/material";
 
-export default function Botones() {
+export default function Botones( {handleOpen}) {
+
     return (
         <>
             <Box 
@@ -14,7 +15,7 @@ export default function Botones() {
                     //height: '100vh'  // Esto es opcional, solo si quieres centrar verticalmente también
                 }}
             >
-                <Button variant="contained" color="primary">
+                <Button variant="contained" color="primary" onClick={handleOpen}>
                     Añadir tarea
                 </Button>
             </Box>
