@@ -16,9 +16,20 @@ function createData(taskName, actions, ) {
   return { taskName, actions};
 }
 
+const iconsTest = [
+  <>
+  <IconButton>
+      <DeleteForeverIcon/>
+  </IconButton>
+  <IconButton>
+    <EditIcon/>
+  </IconButton>
+  </>
+  
+]
 
 const rows = [
-  createData('Jugar Futbol', 'deleete'
+  createData('Jugar Futbol', iconsTest
   ),
 ];
 
@@ -42,13 +53,6 @@ export default function ListContainer() {
                 {row.taskName}
               </TableCell>
               <TableCell align="right">{row.actions}</TableCell>
-              <TableCell align="right">
-                <IconButton aria-label="" onClick={()=>(console.log("icono clickeado"))}>
-                  <DeleteForeverIcon/>
-                </IconButton>
-              </TableCell>
-
-
             </TableRow>
           ))}
         </TableBody>
