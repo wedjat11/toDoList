@@ -42,11 +42,11 @@ export default function ListContainer() {
                 {row.taskName}
               </TableCell>
               <TableCell align="right">{row.actions}</TableCell>
-              {/* <TableCell align="right">
+              <TableCell align="right">
                 <IconButton aria-label="" onClick={()=>(console.log("icono clickeado"))}>
                   <DeleteForeverIcon/>
                 </IconButton>
-              </TableCell> */}
+              </TableCell>
 
 
             </TableRow>
