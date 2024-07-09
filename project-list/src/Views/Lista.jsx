@@ -18,10 +18,12 @@ export default function MainList(){
             sx={{padding: 4}}>To do</Typography>
             <ListContainer/>
             <ModalTasks
-            open= {open}
-            handleClose={handleClose}/>
+            open={open}
+            handleClose={handleClose}
+            />
             <Botones
-            handleOpen={handleOpen}/>
+            handleOpen={handleOpen}
+            />
         </>
         
     )

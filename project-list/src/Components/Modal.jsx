@@ -1,6 +1,6 @@
-import { Box,Modal, Typography } from "@mui/material";
+import { Box,Modal } from "@mui/material";
 import React from "react";
-import EditTask from "./EditTask";
+import MainTask from "./EditTask";
 
 
 const style = {
@@ -12,10 +12,9 @@ const style = {
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
-    p: 4,
+    p: 2,
   };
 export default function ModalTasks({open, handleClose}) {
-    //const [open, setOpen] = React.useState(false);
     
     return (
       <div>
@@ -28,7 +27,8 @@ export default function ModalTasks({open, handleClose}) {
           
         >
           <Box sx={style}>
-            <EditTask/>
+            <MainTask
+            closeModal={handleClose}/>
           </Box>
         </Modal>
       </div>
