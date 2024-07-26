@@ -11,12 +11,13 @@ export default function ListContainer({ rows }) {
     return (
         <TableContainer 
             component={Paper} 
-            sx={{ width: "80vw", margin: "0 auto", display: "flex", justifyContent: "center" }}
+            
         >
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
                         <TableCell>Tasks</TableCell>
+                        <TableCell>Info</TableCell>
                         <TableCell>Status</TableCell>
                         <TableCell align="right">Actions</TableCell>
                     </TableRow>
@@ -29,6 +30,9 @@ export default function ListContainer({ rows }) {
                         >
                             <TableCell component="th" scope="row">
                                 {row.task}
+                            </TableCell>
+                            <TableCell component="th" scope="row">
+                                {row.desc}
                             </TableCell>
                             <TableCell component="th" scope="row">
                                 {row.status}
